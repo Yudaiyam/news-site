@@ -38,7 +38,7 @@
                                     </p>
                                 </div>
                                 <div class="test__text">
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                 </div>
                                 <a href="<?php the_permalink(); ?>" class="test__button">続きを読む</a>
                                 </div>
