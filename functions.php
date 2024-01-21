@@ -1,4 +1,18 @@
 <?php 
+    add_action( 'wp_enqueue_scripts', function(){
+        wp_register_style(
+            'reset_style',
+            get_template_directory_uri() . '/css/reset.css',
+            array(),
+            '1.0',
+        );
+        wp_enqueue_style(
+            'main_style',
+            get_template_directory_uri() . '/css/style.css',
+            array('reset_style'),
+            '1.0'
+        );
+    });
     function setup_theme() {
         add_theme_support('post-thumbnails');
     }
