@@ -15,3 +15,8 @@ TOPページ（front-page.php)：
   1. header.phpとfooter.phpの読み込み
   2. 記事の投稿日時、タイトル、サムネイルが設定されていたらサムネイル、カテゴリー名、記事内容表示
   3. TOPページへのリンク
+
+functions.php：
+  1. css, jsファイルの読み込み
+  2. サムネイル設定オン
+  3. archive.phpのURLを/newsに
