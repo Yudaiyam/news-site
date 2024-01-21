@@ -1,5 +1,6 @@
 # news-site
 各ページ内容：
+
 TOPページ（front-page.php)：
   1. header.phpとfooter.phpの読み込み
   2. 新着記事を3記事表示
