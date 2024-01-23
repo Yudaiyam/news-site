@@ -6,3 +6,7 @@
     <title>Document</title>
     <?php wp_head(); ?>
   </head>
+  <body>
+    <header class="header">
+      <a href="https://github.com/Yudaiyam/news-site/tree/ver.02" target="_blank" rel="noopener">GitHubでソースコードを確認</a>
+    </header>

@@ -3,6 +3,15 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
 .container {
   padding-top: 100px;
   text-align: center;
@@ -110,13 +119,14 @@ img {
 
 .test__list {
   display: flex;
+  align-items: center;
 }
 
 .list__title {
   text-align: center;
   padding-top: 10px;
-  width: 120px;
-  height: 25px;
+  width: fit-content;
+  padding: 8px 12px;
   font-size: 16px;
   background: #111;
   color: #fff;
@@ -192,8 +202,8 @@ img {
 .list01__title {
   text-align: center;
   padding-top: 10px;
-  width: 300px;
-  height: 25px;
+  width: fit-content;
+  padding: 8px 12px;
   font-size: 16px;
   background: #111;
   color: #fff;
@@ -255,4 +265,13 @@ img {
 
 .page-numbers.current {
   color: #333;
+}
+
+.header {
+  padding: 20px;
+}
+
+.header a {
+  font-size: 16px;
+  color: purple;
 }
