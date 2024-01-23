@@ -2,6 +2,15 @@
 <div class="info">
       <div class="info__inner">
         <div class="info__title">新着情報</div>
+            <div class="tab__container">
+                <a href="<?php echo home_url('/news'); ?>" class="tab selected">全て</a>
+                <?php
+                $cats = get_categories();
+                foreach ($cats as $cat){
+                    echo '<a href="' . get_category_link($cat->term_id) . '" class="tab">' . $cat->name . '</a>';
+                }
+                ?>
+            </div>
             <?php 
                 $args = array(
                     'posts_per_page' => -1,
