@@ -22,9 +22,13 @@
                         <div class="test__wrapper">
                             <h2 class="test__title"><?php the_title();?></h2>
                             <div class="test__container">
-                            <?php 
+                            <!-- サムネイル画像が設定されていたらサムネイル画像を、設定されてなければsample.jpgを -->
+                            <?php
                                 if(has_post_thumbnail()){
                                     echo '<div class="test__image">' . get_the_post_thumbnail() . '</div>';
+                                }else{
+                                    $img_src = get_template_directory_uri() . "/img/sample.jpg";
+                                    echo '<div class="test__image"><img src="' . $img_src . '" /></div>';
                                 }
                                 ?>
                                 <div class="test__block">
