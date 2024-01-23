@@ -1,4 +1,14 @@
 <?php 
+    function enqueue_font_awesome() {
+        wp_enqueue_style(
+            'font-awesome',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
+            array(),
+            '6.5.1',
+            'all'
+        );
+    }
+    add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
     add_action( 'wp_enqueue_scripts', function(){
         wp_register_style(
             'reset_style',

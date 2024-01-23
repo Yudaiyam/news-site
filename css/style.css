@@ -240,3 +240,19 @@ img {
 .tab.selected {
   background-color: rgb(213, 193, 10);
 }
+
+.pagination {
+  text-align: center;
+  width: fit-content;
+  margin: 30px auto;
+  position: relative;
+}
+
+.page-numbers {
+  text-decoration: none;
+  color: #888;
+}
+
+.page-numbers.current {
+  color: #333;
+}
