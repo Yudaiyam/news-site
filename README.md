@@ -5,7 +5,7 @@
   ・archive.php
   ・category.php
 
-〇カスタム投稿（Smart Custom Field）：未実装
+〇カスタム投稿（Smart Custom Field）：
   ・front-page.php
   ・archive.php
   ・category.php
