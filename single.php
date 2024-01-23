@@ -12,7 +12,7 @@
                             <?php
                                 $img_main = SCF::get('main_img');
                                 if($img_main){
-                                    echo '<div class="test01__img">' . wp_get_attachment_image($scf_main_img, 'large') . '</div>';
+                                    echo '<div class="test01__img">' . wp_get_attachment_image($img_main, 'large') . '</div>';
                                 }else{
                                     $img_src = get_template_directory_uri() . "/img/sample.jpg";
                                     echo '<div class="test01__img"><img src="' . $img_src . '" /></div>';
