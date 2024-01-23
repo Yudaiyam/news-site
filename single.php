@@ -7,16 +7,17 @@
                 <div class="test01__inner">
                     <div class="test01__title">新着情報</div>
                         <div class="test01__wrapper">
-                            <h2 class="test01__main"><?php the_title();?></h2>
+                            <h2 class="test01__main"><?php echo SCF::get('title'); ?></h2>
                             <!-- サムネイル画像が設定されていたらサムネイル画像を、設定されてなければsample.jpgを -->
-                            <?php 
-                            if (has_post_thumbnail()) {
-                                echo '<div class="test01__img">' . get_the_post_thumbnail() . '</div>';
-                            } else {
-                                $img_src = get_template_directory_uri() . "/img/sample.jpg";
-                                echo '<div class="test01__img"><img src="' . $img_src . '"/></div>';
-                            }
-                            ?>
+                            <?php
+                                $img_main = SCF::get('main_img');
+                                if($img_main){
+                                    echo '<div class="test01__img">' . wp_get_attachment_image($scf_main_img, 'large') . '</div>';
+                                }else{
+                                    $img_src = get_template_directory_uri() . "/img/sample.jpg";
+                                    echo '<div class="test01__img"><img src="' . $img_src . '" /></div>';
+                                }
+                                ?>
                             <div class="test01__container">
                                 <div class="test01__block">
                                     <div class="test01__list">
@@ -29,7 +30,7 @@
                                         <p class="list01__date"><?php echo get_the_date();?></p>
                                     </div>
                                     <div class="test01__text">
-                                        <?php the_content(); ?>
+                                        <?php echo SCF::get('content-paragraph'); ?>
                                     </div>
                                 </div>
                             </div>

@@ -99,10 +99,7 @@ img {
 }
 
 .test__image {
-}
-
-.test__image img {
-  width: 300px;
+  width: 400px;
 }
 
 .test__block {

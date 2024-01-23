@@ -15,7 +15,7 @@
                 $query->the_post(); ?>
                 <a href="<?php the_permalink(); ?>" class="news__block">
                     <p class="news__date"><?php echo get_the_date(); ?></p>
-                    <p class="news__title"><?php the_title();?></p>
+                    <p class="news__title"><?php echo SCF::get('title'); ?></p>
                 </a>
           <?  }
         } ?>
