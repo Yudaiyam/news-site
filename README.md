@@ -1,23 +1,16 @@
 # news-site
-各ページ内容：
+各ページ内容（追加内容）：
 
-TOPページ（front-page.php)：
-  1. header.phpとfooter.phpの読み込み
-  2. 新着記事を3記事表示
-  3. ループ内での記事の投稿日時とタイトル取得
-  4. 記事一覧ページへのリンク
+〇カテゴリータブ切替：
+  ・archive.php
+  ・category.php
 
-記事一覧ページ（archive.php）：
-  1. header.phpとfooter.phpの読み込み
-  2. 新着記事をすべて表示
-  3. ループ内での記事の投稿日時、タイトル、サムネイルが設定されていたらサムネイル、カテゴリー名、記事内容（110字まで）、記事へのリンク取得
+〇カスタム投稿（Smart Custom Field）：未実装
+  ・front-page.php
+  ・archive.php
+  ・category.php
+  ・single.php
 
-記事詳細ページ（single.php）：
-  1. header.phpとfooter.phpの読み込み
-  2. 記事の投稿日時、タイトル、サムネイルが設定されていたらサムネイル、カテゴリー名、記事内容表示
-  3. TOPページへのリンク
-
-functions.php：
-  1. css, jsファイルの読み込み
-  2. サムネイル設定オン
-  3. archive.phpのURLを/newsに
+〇ページネーション：
+  ・archive.php
+  ・category.php
