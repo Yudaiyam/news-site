@@ -8,7 +8,6 @@
                     <div class="test01__title">新着情報</div>
                         <div class="test01__wrapper">
                             <h2 class="test01__main"><?php the_title();?></h2>
-                            <div class="test01__container">
                             <!-- サムネイル画像が設定されていたらサムネイル画像を、設定されてなければsample.jpgを -->
                             <?php 
                             if (has_post_thumbnail()) {
@@ -18,6 +17,7 @@
                                 echo '<div class="test01_img"><img src="' . $img_src . '"/></div>';
                             }
                             ?>
+                            <div class="test01__container">
                                 <div class="test01__block">
                                     <div class="test01__list">
                                             <!-- カテゴリー -->
