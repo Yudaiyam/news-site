@@ -14,7 +14,7 @@
                                 echo '<div class="test01__img">' . get_the_post_thumbnail() . '</div>';
                             } else {
                                 $img_src = get_template_directory_uri() . "/img/sample.jpg";
-                                echo '<div class="test01_img"><img src="' . $img_src . '"/></div>';
+                                echo '<div class="test01__img"><img src="' . $img_src . '"/></div>';
                             }
                             ?>
                             <div class="test01__container">

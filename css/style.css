@@ -175,7 +175,8 @@ img {
 }
 
 .test01__img {
-  width: 400px;
+  max-width: 800px;
+  margin: 30px auto;
   flex-shrink: 0;
 }
 
@@ -185,6 +186,9 @@ img {
 
 .test01__list {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .list01__title {
@@ -198,7 +202,6 @@ img {
 }
 
 .list01__date {
-  padding: 10px 30px;
 }
 
 .test01__text {
