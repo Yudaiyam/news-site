@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <div class="info">
     <div class="info__inner">
-        <div class="info__title">新着情報</div>
         <div class="tab__container">
             <a href="<?php echo home_url('/news'); ?>" class="tab selected">全て</a>
             <?php
