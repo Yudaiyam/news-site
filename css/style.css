@@ -248,7 +248,7 @@ a:hover {
 }
 
 .tab.selected {
-  background-color: rgb(213, 193, 10);
+  background-color: orange;
 }
 
 .pagination {
@@ -261,10 +261,24 @@ a:hover {
 .page-numbers {
   text-decoration: none;
   color: #888;
+  font-size: 20px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(250, 213, 143);
+  line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-numbers {
+    font-size: 16px;
+  }
 }
 
 .page-numbers.current {
   color: #333;
+  background-color: orange;
 }
 
 .header {
