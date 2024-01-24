@@ -273,7 +273,14 @@ a:hover {
   justify-content: space-between;
 }
 
+.h-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
 .header a {
   font-size: 16px;
-  color: purple;
+  color: orange;
 }
