@@ -29,7 +29,10 @@
                                     <p class="list01__date"><?php echo get_the_date();?></p>
                                 </div>
                                 <div class="test01__text">
-                                    <?php echo SCF::get('content-paragraph'); ?>
+                                    <?php 
+                                    $content_paragraph = SCF::get('content-paragraph');
+                                    echo nl2br($content_paragraph);
+                                     ?>
                                 </div>
                             </div>
                         </div>
