@@ -63,17 +63,6 @@
         }
         wp_reset_postdata();
         echo '<div class="pagination">';
-        $args = array(
-            'posts_per_page' => 2,
-            'post_type' => 'post',
-            'paged' => $paged,
-        );
-        $posts_category = new WP_Query($args);
-
-        while ($posts_category->have_posts()) {
-            $posts_category->the_post();
-        }
-        wp_reset_postdata();
         $total_pages = $post_list->max_num_pages;
         if ($total_pages > 1) {
             echo paginate_links(array(
