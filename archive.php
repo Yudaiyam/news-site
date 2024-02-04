@@ -71,8 +71,6 @@
                 'mid_size' => 2,
                 'prev_text' => '<i class="fa-solid fa-chevron-left"></i>',
                 'next_text' => '<i class="fa-solid fa-chevron-right"></i>',
-                'before_page_number' => '<span class="pagination__num">',
-                'after_page_number' => '</span>',
             ));
         }
         ?>
