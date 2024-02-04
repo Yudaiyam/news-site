@@ -8,10 +8,7 @@ get_header();
             <?php
             $cats = get_categories();
             foreach ($cats as $cat) {
-                $current_cat_class = '';
-                if (is_category($cat->term_id)) {
-                    $current_cat_class = ' selected';
-                }
+                $current_cat_class = is_category($cat->term_id) ? ' selected' : '';
                 echo '<a href="' . get_category_link($cat->term_id) . '" class="tab' . $current_cat_class . '">' . $cat->name . '</a>';
             }
             ?>
