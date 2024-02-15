@@ -12,15 +12,15 @@
         </div>
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        $post_data = array(
+        $args = array(
             'paged' => $paged,
             'posts_per_page' => 2,
             'post_type' => 'post',
         );
-        $post_list = new WP_Query($post_data);
+        $query = new WP_Query($args);
 
-        while ($post_list->have_posts()) {
-            $post_list->the_post();
+        while ($query->have_posts()) {
+            $query->the_post();
             ?>
             <div class="test__wrapper">
                 <h2 class="test__title"><?php echo SCF::get('title'); ?></h2>
@@ -63,7 +63,7 @@
         }
         wp_reset_postdata();
         echo '<div class="pagination">';
-        $total_pages = $post_list->max_num_pages;
+        $total_pages = $query->max_num_pages;
         if ($total_pages > 1) {
             echo paginate_links(array(
                 'total' => $total_pages,

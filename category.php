@@ -21,11 +21,11 @@ get_header();
             'paged' => $paged,
             'cat' => get_query_var('cat'),
         );
-        $posts_category = new WP_Query($args);
+        $query = new WP_Query($args);
 
-        if ($posts_category->have_posts()) {
-            while ($posts_category->have_posts()) {
-                $posts_category->the_post();
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
                 ?>
                 <div class="test__wrapper">
                     <h2 class="test__title"><?php echo SCF::get('title'); ?></h2>
@@ -69,7 +69,7 @@ get_header();
 
             // ページネーションの表示
             echo '<div class="pagination">';
-            $total_pages = $posts_category->max_num_pages;
+            $total_pages = $query->max_num_pages;
             if ($total_pages > 1) {
                 echo paginate_links(array(
                     'total' => $total_pages,
