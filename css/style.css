@@ -110,6 +110,7 @@ a:hover {
 
 .test__image {
   width: 400px;
+  margin: 0 auto 32px;
 }
 
 .test__block {

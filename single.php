@@ -6,17 +6,17 @@
             <div class="test01">
                 <div class="test01__inner">
                     <div class="test01__wrapper">
-                        <h2 class="test01__main"><?php echo SCF::get('title'); ?></h2>
+                        <h2 class="test01__main"><?php echo cfs()->get('title'); ?></h2>
                         <!-- サムネイル画像が設定されていたらサムネイル画像を、設定されてなければsample.jpgを -->
                         <?php
-                            $img_main = SCF::get('main_img');
-                            if($img_main){
-                                echo '<div class="test01__img">' . wp_get_attachment_image($img_main, 'large') . '</div>';
-                            }else{
-                                $img_src = get_template_directory_uri() . "/img/sample.jpg";
-                                echo '<div class="test01__img"><img src="' . $img_src . '" /></div>';
-                            }
-                            ?>
+                        $img_main = cfs()->get('img_main');
+                        if ($img_main) {
+                            echo '<div class="test__image"><img src="' . $img_main . '" alt="' . cfs()->get('title') . '"/></div>';
+                        } else {
+                            $img_sample = get_template_directory_uri() . "/img/sample.jpg";
+                            echo '<div class="test__image"><img src="' . $img_sample . '" alt="' . cfs()->get('title') . '" /></div>';
+                        }
+                        ?>
                         <div class="test01__container">
                             <div class="test01__block">
                                 <div class="test01__list">
@@ -30,13 +30,13 @@
                                 </div>
                                 <div class="test01__text">
                                     <?php 
-                                    $content_paragraph = SCF::get('content-paragraph');
-                                    echo nl2br($content_paragraph);
+                                    $text_main = cfs()->get('text_main');
+                                    echo nl2br($text_main);
                                      ?>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo home_url('/');?>" class="test01__button">TOPに戻る</a>
+                        <a href="<?php echo esc_url(home_url('/'));?>" class="test01__button">TOPに戻る</a>
                     </div>
                 </div>
             </div>
