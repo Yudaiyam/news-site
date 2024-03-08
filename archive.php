@@ -43,7 +43,7 @@
                                 <div class="test__text">
                                     <?php the_excerpt(); ?> <!-- 110字だけ投稿内容表示 -->
                                 </div>
-                                <a href="<?php the_permalink(); ?>" class="test__button">続きを読む</a>
+                                <a href="<?php esc_url(the_permalink()); ?>" class="test__button">続きを読む</a>
                                 </div>
                             </div>
                             </div>

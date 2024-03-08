@@ -14,14 +14,15 @@
         if($query->have_posts()){
             while($query->have_posts()){
                 $query->the_post(); ?>
-                <a href="<?php the_permalink(); ?>" class="news__block">
+                <!-- エスケープ処理*3 -->
+                <a href="<?php esc_url(the_permalink()); ?>" class="news__block">
                     <p class="news__date"><?php echo get_the_date(); ?></p>
                     <p class="news__title"><?php the_title();?></p>
                 </a>
           <?  }
           wp_reset_postdata();
         } ?>
-        <!-- home_url関数を使ったページ遷移とエスケープ処理*3 -->
+        <!-- home_url関数を使ったページ遷移 -->
       <a href="<?php echo esc_url(home_url('/news')); ?>" class="news__button">news一覧</a>
     </div>
 <?php get_footer(); ?>
@@ -38,6 +39,12 @@ wp_reset_postdata()関数は、こうした問題を解決するために使わ�
 
 
 <!-- ※3 エスケープ処理とは？ -->
+<!-- esc_urlは、与えられたURLをエスケープするWordPressの関数です。エスケープ処理は、セキュリティの観点から重要です。しかし、すべての場所でesc_urlを使用する必要はありません。 -->
+<!-- 以下のケースでesc_urlを使用する必要があります： -->
+    <!-- 1. ユーザーからの入力データを表示する場合： -->
+        <!-- ユーザーからの入力データを含むURLを表示する場合（例えば、コメントのURLフィールドやフォームからの入力など）、そのURLはesc_urlでエスケープする必要があります。これにより、悪意のあるスクリプトが挿入されたり、不正なリダイレクトが行われたりするのを防ぐことができます。 -->
+    <!-- 2. ダイナミックに生成されたURLを表示する場合： -->
+        <!-- テーマやプラグインの中で、ダイナミックに生成されたURLを表示する場合、それらもesc_urlでエスケープする必要があります。例えば、the_permalink()やhome_url()で取得したURLはエスケープが必要です。 -->
 <!-- esc_url() は URL のプロトコルのチェックや適切でない文字をエスケープ（または除去）して、URL を無害化します。URL を文字列で出力する場合や、URL を指定可能な属性（href や src）に値を出力する場合などで使用します。-->
 <!-- 詳しくはこちらのサイトを参照 -->
 <!-- https://www.webdesignleaves.com/pr/wp/wp_escape_functions.html -->
