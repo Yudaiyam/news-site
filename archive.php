@@ -2,9 +2,10 @@
 <div class="info">
       <div class="info__inner">
         <div class="info__title">新着情報</div>
+        <!-- サブループ -->
             <?php 
                 $args = array(
-                    'posts_per_page' => -1,
+                    'posts_per_page' => -1, //-1で全投稿表示
                     'post_type' => 'post',
                     'orderby' => 'date',
                     'order' => 'DESC',
@@ -27,18 +28,20 @@
                                 ?>
                                 <div class="test__block">
                                 <div class="test__list">
+                                    <!-- カテゴリー情報の取得ここから -->
                                     <?php
                                         $cats = get_the_category();
                                         foreach ($cats as $cat){
                                             echo '<p class="list__title">'. $cat->name . '</p>';
                                         }
                                     ?>
+                                    <!-- カテゴリー情報の取得ここまで -->
                                     <p class="list__date">
                                         <?php echo get_the_date(); ?>
                                     </p>
                                 </div>
                                 <div class="test__text">
-                                    <?php the_excerpt(); ?>
+                                    <?php the_excerpt(); ?> <!-- 110字だけ投稿内容表示 -->
                                 </div>
                                 <a href="<?php the_permalink(); ?>" class="test__button">続きを読む</a>
                                 </div>
@@ -46,6 +49,7 @@
                             </div>
                     <?php
                     }
+                    wp_reset_postdata();
                 }
                 ?>
       </div>

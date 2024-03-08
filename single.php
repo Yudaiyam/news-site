@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<!-- メインループ -->
 <?php
     if(have_posts()){
         while(have_posts()){
@@ -20,12 +21,13 @@
                             ?>
                                 <div class="test01__block">
                                     <div class="test01__list">
-                                            <!-- カテゴリー -->
+                                            <!-- カテゴリー情報の取得ここから -->
                                             <?php
                                             $cats = get_the_category();
                                             foreach ($cats as $cat){
                                                 echo '<p class="list01__title">' . $cat->name .'</p>';
                                             } ?>
+                                            <!-- カテゴリー情報の取得ここまで -->
                                         <p class="list01__date"><?php echo get_the_date();?></p>
                                     </div>
                                     <div class="test01__text">
@@ -33,14 +35,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?php echo home_url('/');?>" class="test01__button">TOPに戻る</a>
+                            <a href="<?php echo esc_url(home_url('/'));?>" class="test01__button">TOPに戻る</a>
                         </div>
                     </div>
                 </div>
             </div>
         <?php
         }
-        wp_reset_postdata();
     }
 ?>
 <?php get_footer(); ?>
