@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div class="info">
     <div class="info__inner">
+        <!-- カテゴリーのタブ切替ここから -->
         <div class="tab__container">
             <a href="<?php echo esc_url(home_url('/news')); ?>" class="tab selected">全て</a>
             <?php
@@ -12,6 +13,7 @@
             }
             ?>
         </div>
+        <!-- カテゴリーのタブ切替ここまで -->
         <?php
         // get_query_var('paged')と参考演算子*
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -66,6 +68,7 @@
         }
         wp_reset_postdata();
     }
+        // ページネーションここから
         echo '<div class="pagination">';
         // max_num_pages = （サイト内の投稿数）/ (posts_per_pageで設定した数)
         $total_pages = $query->max_num_pages;
@@ -81,6 +84,7 @@
         }
         ?>
         </div>
+        <!-- ページネーションここまで -->
     </div>
 </div>
 <?php get_footer(); ?>
