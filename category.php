@@ -1,4 +1,9 @@
 <?php get_header(); ?>
+<?php
+    if (function_exists('yoast_breadcrumb')) {
+        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+    }
+?>
 <div class="info">
     <div class="info__inner">
         <!-- カテゴリーのタブ切替ここから -->

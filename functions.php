@@ -23,10 +23,12 @@
             '1.0'
         );
     });
+
     function setup_theme() {
         add_theme_support('post-thumbnails');
     }
     add_action('after_setup_theme', 'setup_theme');
+    
     function post_has_archive( $args, $post_type ) {
         if ( 'post' == $post_type ) {
         $args['rewrite'] = true;
@@ -36,4 +38,14 @@
         return $args;
         }
         add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+        function override_yoast_breadcrumb($links)
+        {
+          if (!is_page()) {
+            $add_link[] = array('text' => 'お知らせ一覧', 'url' => '/news/');
+            array_splice($links, 1, 0, $add_link);
+          }
+          return $links;
+        }
+        add_filter('wpseo_breadcrumb_links', 'override_yoast_breadcrumb');
 ?>
