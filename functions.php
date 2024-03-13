@@ -39,6 +39,7 @@
         }
         add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
+        // パンくずリストの「一覧ページ」カスタマイズここから
         function override_yoast_breadcrumb($links)
         {
           if (!is_page()) {
@@ -49,4 +50,5 @@
           return $links;
         }
         add_filter('wpseo_breadcrumb_links', 'override_yoast_breadcrumb');
+        // パンくずリストの「一覧ページ」カスタマイズここまで
 ?>
