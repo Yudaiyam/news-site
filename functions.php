@@ -28,7 +28,7 @@
         add_theme_support('post-thumbnails');
     }
     add_action('after_setup_theme', 'setup_theme');
-    
+
     function post_has_archive( $args, $post_type ) {
         if ( 'post' == $post_type ) {
         $args['rewrite'] = true;
@@ -42,7 +42,8 @@
         function override_yoast_breadcrumb($links)
         {
           if (!is_page()) {
-            $add_link[] = array('text' => 'お知らせ一覧', 'url' => '/news/');
+            $news_url = home_url('/news');
+            $add_link[] = array('text' => 'お知らせ一覧', 'url' => $news_url);
             array_splice($links, 1, 0, $add_link);
           }
           return $links;
