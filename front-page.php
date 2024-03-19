@@ -4,18 +4,19 @@
                 <p class="subtitle">news</p>
                 <!-- サブループ*1*2 -->
         <?php 
+        // 変数argsに配列（array）の内容を格納
         $args = array(
             'posts_per_page' => 3, //投稿を3件表示　← この設定を追加するのが今回のサブループの一番の目的
             'post_type' => 'post', //投稿タイプを設定
             'orderby' => 'date',  //順序の基準（投稿日時）
             'order' => 'DESC',  //降順か昇順か（DESCは降順、ASCが昇順）
         );
-        $query = new WP_Query($args); //WP_Query関数で$argsのパラメータに基づいた投稿データ取得
+        $query = new WP_Query($args); //WP_Query関数で$argsのパラメータに基づいた投稿データ取得して変数queryの中に格納
         // '$query->'でデータ取得先を指定
         if($query->have_posts()){
             while($query->have_posts()){
                 $query->the_post(); ?>
-                ”$query->”を書かないと上の
+                <!-- ”$query->”を書かない$queryの内容が引き継がれなくなる -->
                 <!-- エスケープ処理*3 -->
                 <a href="<?php esc_url(the_permalink()); ?>" class="news__block">
                     <p class="news__date"><?php echo get_the_date(); ?></p>
