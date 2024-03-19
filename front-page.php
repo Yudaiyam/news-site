@@ -18,10 +18,11 @@
                 $query->the_post(); ?>
                 <!-- ”$query->”を書かない$queryの内容が引き継がれなくなる -->
                 <!-- エスケープ処理*3 -->
-                <a href="<?php esc_url(the_permalink()); ?>" class="news__block">
-                    <p class="news__date"><?php echo get_the_date(); ?></p>
-                    <p class="news__title"><?php the_title();?></p>
+                <a href="<?php esc_url(the_permalink()); ?>" class="news__block"><!-- the_permalink()関数　記事のリンクを表示 -->
+                    <p class="news__date"><?php echo get_the_date(); ?></p><!-- get_the_date()関数　投稿日時を取得 -->
+                    <p class="news__title"><?php the_title();?></p><!-- the_title()関数 投稿記事のタイトルを表示 -->
                 </a>
+                <!-- 「表示」と「取得」の違い*4 -->
           <?  }
           wp_reset_postdata();
         } ?>
@@ -51,3 +52,8 @@ wp_reset_postdata()関数は、こうした問題を解決するために使わ�
 <!-- esc_url() は URL のプロトコルのチェックや適切でない文字をエスケープ（または除去）して、URL を無害化します。URL を文字列で出力する場合や、URL を指定可能な属性（href や src）に値を出力する場合などで使用します。-->
 <!-- 詳しくはこちらのサイトを参照 -->
 <!-- https://www.webdesignleaves.com/pr/wp/wp_escape_functions.html -->
+
+<!-- ※4 「表示」と「取得」の違い -->
+<!-- phpで構築されているWordPressサイトをブラウザ上に表示するためには、サーバーでphpをhtmlに変換しなければなりません。
+the_title()関数やthe_permalinke()関数のような"the"から始まる関数はhtmlへの変換まで自動的に行いますが、get_the_date()関数のように"get"から始まる関数だと情報の取得しかしてくれません。
+そのため、getで取得した情報をhtmlに文字列として表示させるために"echo"を付ける必要があります。 -->
