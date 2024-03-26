@@ -51,4 +51,3 @@
         }
         add_filter('wpseo_breadcrumb_links', 'override_yoast_breadcrumb');
         // パンくずリストの「一覧ページ」カスタマイズここまで
-?>
