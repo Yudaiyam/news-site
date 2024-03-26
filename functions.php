@@ -36,4 +36,3 @@
         }
         add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
     // 管理画面のカスタマイズここまで
-?>
