@@ -19,6 +19,7 @@
                                 echo '<div class="test01_img"><img src="' . $img_src . '"/></div>';
                             }
                             ?>
+                            <!-- サムネイル設定ここまで -->
                                 <div class="test01__block">
                                     <div class="test01__list">
                                             <!-- カテゴリー情報の取得ここから -->
